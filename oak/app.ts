@@ -2,9 +2,8 @@ import { Application } from './dependencies.ts'
 import router from './router.ts'
 
 const app = new Application()
-const PORT = 3456
+const PORT = Deno.env.get('PORT') || 3456
 const HOST = '0.0.0.0'
-
 
 // este es un middleware, que se va ejecutando en orden
 // app.use((context, next) => {
