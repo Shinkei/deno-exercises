@@ -1,23 +1,10 @@
-import { Application, Router } from 'http://deno.land/x/oak/mod.ts'
+import { Application } from './dependencies.ts'
+import router from './router.ts'
 
 const app = new Application()
 const PORT = 3456
 const HOST = '0.0.0.0'
 
-const router = new Router()
-
-router.get('/', (context) => {
-  context.response.body = 'Pagina de inicio'
-})
-
-router.get('/users', (context) => {
-  context.response.body = 'Pagina de usuarios'
-})
-
-
-router.get('/users/:name', (context) => {
-  context.response.body = `pagina de ${context.params.name}`
-})
 
 // este es un middleware, que se va ejecutando en orden
 // app.use((context, next) => {
